@@ -13,13 +13,13 @@ import { reduxFirestore, firestoreReducer } from 'redux-firestore'
 // @todo
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDt5Kt9WMDmWOD5jjz6MgoV0ny3_rh0Z5o',
-  authDomain: 'clientpanel-97ece.firebaseapp.com',
-  projectId: 'clientpanel-97ece',
-  storageBucket: 'clientpanel-97ece.appspot.com',
-  messagingSenderId: '607621917889',
-  appId: '1:607621917889:web:89e4a909ab9c51c3157840',
-  measurementId: 'G-68BDGEC2GZ',
+  apiKey: 'AIzaSyCrlj7a69u-DF6kT5fmVrSdu-S0sVG20XU',
+  authDomain: 'client-panel-c22a8.firebaseapp.com',
+  projectId: 'client-panel-c22a8',
+  storageBucket: 'client-panel-c22a8.appspot.com',
+  messagingSenderId: '279304430008',
+  appId: '1:279304430008:web:f5aa97daa860dbc1b9af4d',
+  measurementId: 'G-JWQHTRXYC1',
 }
 
 // react-redux-firebase config
