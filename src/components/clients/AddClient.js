@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import PropTypes from 'prop-types'
 // import { compose } from 'redux'
 // import { connect } from 'react-redux'
@@ -19,18 +19,17 @@ class AddClient extends Component {
 
     const newClient = this.state
 
-    const { firestore } = this.props
+    const { firestore, useNavigate } = this.props
 
     // If no balance, make 0
     if (newClient.balance === '') {
       newClient.balance = 0
     }
 
-    // me ndreq pushin
-
+    // me ndreq pushin rreshti 33
     firestore
       .add({ collection: 'clients' }, newClient)
-      .then(() => this.props.history.push('/'))
+      .then(() => useNavigate('/'))
   }
 
   onChange = e => this.setState({ [e.target.name]: e.target.value })

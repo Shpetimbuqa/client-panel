@@ -7,6 +7,7 @@ import store from './store'
 import AppNavBar from './components/layout/AppNavBar'
 import Dashboard from './components/layout/Dashboard'
 import AddClient from './components/clients/AddClient'
+import ClientDetails from './components/clients/ClientDetails'
 import './App.css'
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
               <Routes>
                 <Route exact path='/' element={<Dashboard />} />
                 <Route exact path='/client/add' element={<AddClient />} />
+                <Route exact path='/client/:id' element={<ClientDetails />} />
               </Routes>
             </div>
           </div>
