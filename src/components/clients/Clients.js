@@ -27,27 +27,7 @@ class Clients extends Component {
 
   render() {
     const { clients } = this.props
-    console.log(this.props)
     const { totalOwed } = this.state
-
-    // const clients = [
-    //   {
-    //     id: '1240054724',
-    //     firstName: 'Shpëtim',
-    //     lastName: 'Buqa',
-    //     email: 'shpetim.buqa@hotmail.com',
-    //     phone: '049-182-889',
-    //     balance: '30',
-    //   },
-    //   {
-    //     id: '2156131516',
-    //     firstName: 'Gent',
-    //     lastName: ' Buqa',
-    //     email: 'gent@gmail.com',
-    //     phone: '049-881-811',
-    //     balance: '100',
-    //   },
-    // ]
 
     if (clients) {
       return (
@@ -116,4 +96,3 @@ export default compose(
     clients: state.firestore.ordered.clients,
   }))
 )(Clients)
-
