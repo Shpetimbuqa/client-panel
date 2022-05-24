@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import PropTypes from 'prop-types'
 // import { compose } from 'redux'
 // import { connect } from 'react-redux'
@@ -19,7 +20,7 @@ class AddClient extends Component {
 
     const newClient = this.state
 
-    const { firestore, useNavigate } = this.props
+    const { firestore } = this.props
 
     // If no balance, make 0
     if (newClient.balance === '') {
@@ -27,11 +28,14 @@ class AddClient extends Component {
     }
 
     // me ndreq pushin rreshti 33
-    firestore
-      .add({ collection: 'clients' }, newClient)
-      .then(() => useNavigate('/'))
+    firestore.add({ collection: 'clients' }, newClient)
   }
 
+  handleClick = e => {
+    this.onSubmit()
+    const navigate = useNavigate()
+    navigate('/dashboard')
+  }
   onChange = e => this.setState({ [e.target.name]: e.target.value })
 
   render() {
@@ -47,7 +51,7 @@ class AddClient extends Component {
         <div className='card'>
           <div className='card-header'>Add Client</div>
           <div className='card-body'>
-            <form onSubmit={this.onSubmit}>
+            <form onSubmit={this.handleClick}>
               <div className='form-group'>
                 <label htmlFor='firstName'>First Name</label>
                 <input
@@ -104,12 +108,14 @@ class AddClient extends Component {
                   value={this.state.balance}
                 />
               </div>
+              {/* <form onSubmit={this.handleSubmit}> */}
               <input
                 type='submit'
                 value='Submit'
                 className='btn btn-primary btn-block'
               />
             </form>
+            {/* </form> */}
           </div>
         </div>
       </div>
