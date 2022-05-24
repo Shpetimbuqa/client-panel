@@ -19,7 +19,7 @@ class App extends Component {
             <AppNavBar />
             <div className='container'>
               <Routes>
-                <Route exact path='/dashboard' element={<Dashboard />} />
+                <Route exact path='/' element={<Dashboard />} />
                 <Route exact path='/client/add' element={<AddClient />} />
                 <Route exact path='/client/:id' element={<ClientDetails />} />
               </Routes>
