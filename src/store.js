@@ -18,8 +18,8 @@ const firebaseConfig = {
   projectId: 'client-panel-c22a8',
   storageBucket: 'client-panel-c22a8.appspot.com',
   messagingSenderId: '279304430008',
-  appId: '1:279304430008:web:f5aa97daa860dbc1b9af4d',
-  measurementId: 'G-JWQHTRXYC1',
+  appId: '1:279304430008:web:f351b20e6d019884b9af4d',
+  measurementId: 'G-2NHHMRNPJV',
 }
 
 // react-redux-firebase config

@@ -7,9 +7,9 @@ import { firestoreConnect } from 'react-redux-firebase'
 import Spinner from '../layout/Spinner'
 
 function ClientDetails() {
-  let { id } = useParams()
-
   const { client } = this.props
+
+  const { id } = this.useParams()
 
   if (client) {
     return (

@@ -13,20 +13,20 @@ import './App.css'
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <Router>
-          <div className='App'>
-            <AppNavBar />
-            <div className='container'>
-              <Routes>
-                <Route exact path='/' element={<Dashboard />} />
-                <Route exact path='/client/add' element={<AddClient />} />
-                <Route exact path='/client/:id' element={<ClientDetails />} />
-              </Routes>
+        <Provider store={store}>
+          <Router>
+            <div className='App'>
+              <AppNavBar />
+              <div className='container'>
+                <Routes>
+                  <Route exact path='/' element={<Dashboard />} />
+                  <Route exact path='/client/add' element={<AddClient />} />
+                  <Route exact path='/client/:id' element={<ClientDetails />} />
+                </Routes>
+              </div>
             </div>
-          </div>
-        </Router>
-      </Provider>
+          </Router>
+        </Provider>
     )
   }
 }

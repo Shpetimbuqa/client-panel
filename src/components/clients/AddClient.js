@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 // import { compose } from 'redux'
 // import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
+import Clients from './Clients'
 
 class AddClient extends Component {
   state = {
@@ -28,13 +29,14 @@ class AddClient extends Component {
     }
 
     // me ndreq pushin rreshti 33
-    firestore.add({ collection: 'clients' }, newClient)
+    firestore.add({ collection: 'clients' }, newClient).then(() => {
+      this.handleClick()
+    })
   }
 
-  handleClick = e => {
-    this.onSubmit()
+  handleClick = () => {
     const navigate = useNavigate()
-    navigate('/dashboard')
+    navigate('/')
   }
   onChange = e => this.setState({ [e.target.name]: e.target.value })
 
@@ -51,7 +53,7 @@ class AddClient extends Component {
         <div className='card'>
           <div className='card-header'>Add Client</div>
           <div className='card-body'>
-            <form onSubmit={this.handleClick}>
+            <form onSubmit={this.onSubmit}>
               <div className='form-group'>
                 <label htmlFor='firstName'>First Name</label>
                 <input
@@ -108,14 +110,16 @@ class AddClient extends Component {
                   value={this.state.balance}
                 />
               </div>
-              {/* <form onSubmit={this.handleSubmit}> */}
-              <input
+              <button
                 type='submit'
                 value='Submit'
-                className='btn btn-primary btn-block'
-              />
+                className='btn btn-primary
+                btn-block'
+                onClick={this.handleClick}
+              >
+                Submit
+              </button>
             </form>
-            {/* </form> */}
           </div>
         </div>
       </div>

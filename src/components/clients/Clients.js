@@ -41,7 +41,7 @@ class Clients extends Component {
             </div>
             <div className='col-md-6'>
               <h5 className='text-right text-secondary'>
-                Total Owed
+                Total Owed:
                 <span className='text-primary'>
                   ${parseFloat(totalOwed).toFixed(2)}
                 </span>
@@ -86,7 +86,7 @@ class Clients extends Component {
 }
 
 Clients.propTypes = {
-  firestore: PropTypes.object,
+  firestore: PropTypes.object.isRequired,
   clients: PropTypes.array,
 }
 
